@@ -18,7 +18,6 @@ async function seedData(){
     try{
         await Book.deleteMany({});
         await Book.insertMany(Books);
-        // console.log(`${book_data.length} books seeded successfully`);
         console.log("Successfully added books in the database!")
         process.exit();
     }catch(error){
