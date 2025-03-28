@@ -2,13 +2,13 @@ const Booklist = [
     {
       "author": "Chinua Achebe",
       "country": "Nigeria",
-      "imageLink": "./images/things-fall-apart.jpeg",
+      "imageLink": "images/things-fall-apart.jpeg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Things_Fall_Apart",
       "pages": 209,
       "title": "Things Fall Apart",
       "year": 1958,
-      "number":18,
+      "number":38,
     },
     {
       "author": "Hans Christian Andersen",
@@ -19,7 +19,7 @@ const Booklist = [
       "pages": 784,
       "title": "Fairy Tales",
       "year": 1836,
-      "number":10,
+      "number":7,
     },
     {
       "author": "Dante Alighieri",
@@ -30,7 +30,7 @@ const Booklist = [
       "pages": 928,
       "title": "The Divine Comedy",
       "year": 1320,
-      "number":8,
+      "number":25,
     },
     {
       "author": "Jane Austen",
@@ -96,7 +96,7 @@ const Booklist = [
       "pages": 185,
       "title": "The Stranger",
       "year": 1942,
-      "number":8,
+      "number":23,
     },
     {
       "author": "Louis-Ferdinand Céline",

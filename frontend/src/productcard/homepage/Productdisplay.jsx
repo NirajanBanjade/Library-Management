@@ -1,11 +1,13 @@
 import React from 'react';
 import BookCard from '../product/productcard';
-import Booklist from '../../Booklist';
 import { useState, useEffect } from 'react';
+import LoginPage from '../loginpage/login';
+import './Productdisplay.css'
 
 const Productdisplay = () => {
     const [List, setList] = useState([]);
     async function fetchdata(){
+        console.log("Fetching data...");
 
         try{
             const response=await fetch('http://localhost:4000/api/books');
@@ -26,21 +28,19 @@ const Productdisplay = () => {
     //   console.log("Current List state:", List);
   
   return (
-    <>
-        <div>
-            <h2>Books</h2>
-            {List && List.map((book) => (
-                <div key={book._id}>
-                    {/* Assuming your book object has these properties */}
-                    <h3>{book.title}</h3>
-                    <p>{book.author}</p>
-                    {/* Or use your BookCard component */}
-                    <BookCard book={book} />
-                </div>
-            ))}
+    
+        <div className='container'>
+        {List.map((book) => (
+            <BookCard
+            key={book._id}
+            title={book.title}
+            author={book.author}
+            year={book.year}
+            imageLink={book.imageLink}
+            />
+        ))}
         </div>
-        
-    </>
+    
   );
 };
 

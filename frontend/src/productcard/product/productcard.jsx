@@ -1,21 +1,21 @@
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-
+import './productcard.css'
+import { Card } from 'react-bootstrap';
 function BookCard(props) {
   const { imageLink, title, author, year } = props;
+  console.log("Props received in BookCard:", props);
 
   return (
-      <Card className="bg-light p-3 shadow rounded d-flex flex-fill h-100 cardContainer" style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={imageLink} alt="Book Cover" />
-            <Card.Body>
-              <Card.Title>{title}</Card.Title>
-              <Card.Text>
-                <strong>Author:</strong> {author} <br />
-                <strong>Year:</strong> {year}
-              </Card.Text>
-              <Button variant="primary">More Details</Button>
-            </Card.Body>
-          </Card>
+     <div className='card-container'>
+      <img src={imageLink} alt="no image" />
+      <div className='text-edit'>
+        <strong>Title: {title}</strong><br/>
+        <strong>Author: {author}</strong><br/>
+        <strong>Year: {year}</strong><br/>
+        <strong><button type="button" id="full-desc">Full description</button></strong>
+      </div>
+     </div>
+
   );
 }
 
