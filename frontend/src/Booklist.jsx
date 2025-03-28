@@ -1,8 +1,8 @@
-const Books = [
+const Booklist = [
     {
       "author": "Chinua Achebe",
       "country": "Nigeria",
-      "imageLink": "images/things-fall-apart.jpeg",
+      "imageLink": "./images/things-fall-apart.jpeg",
       "language": "English",
       "link": "https://en.wikipedia.org/wiki/Things_Fall_Apart",
       "pages": 209,
@@ -111,5 +111,5 @@ const Books = [
     }
   ]
 
-  export default Books;
+  export default Booklist;
   
