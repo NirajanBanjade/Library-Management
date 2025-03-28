@@ -1,0 +1,12 @@
+
+.container {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+  gap: 30px; /* Space between items */
+  padding: 20px; /* Optional: adds padding inside the container */
+  overflow-y: auto; /* Allow scrolling if content exceeds the container height */
+  height: 100% ;/*Set the container height to full viewport height  */
+  box-sizing: border-box; /* Ensure padding is included in the element's total width/height */
+}
+
+

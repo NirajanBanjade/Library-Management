@@ -6,12 +6,8 @@ export const app = express()
 
 config({path: "./config.env"});
 
-app.use(cors({
-    origin: [process.env.FRONT_RND_URL],
-    methods: ["GET", "POST", "PUT", "DELETE"], // ✅ fixed
-    credentials: true,
-  }));
-  app.use(cookieParser());
+app.use(cors());
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 

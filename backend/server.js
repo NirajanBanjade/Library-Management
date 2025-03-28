@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGO_URI, {
     process.exit(1);
   });
 
-
 app.get('/',(req,res)=>{
     console.log("API is working!");
+    
 })

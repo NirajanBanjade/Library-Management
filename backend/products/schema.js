@@ -33,7 +33,12 @@ const Bookschema = new Schema({
     year:{
         type:Number,
         required:true,
-    }
+    },
+    number: {
+        type: Number,
+        required: true,
+        default: 1, // Start with 1 copy
+      },
 });
 
 const UserSchema = new Schema({

@@ -1,0 +1,13 @@
+.card-container{
+    border:2px solid black;
+    padding: 20px;
+    border-radius: 30px;
+}
+img{
+    width: 200px;
+    height: 200px;
+}
+#full-desc{
+    background-color: rgb(35, 150, 196);
+    border-radius: 20px;
+}
