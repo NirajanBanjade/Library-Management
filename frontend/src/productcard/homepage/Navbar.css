@@ -1,0 +1,13 @@
+
+.navbar{
+    background-color: rgb(34, 140, 182);
+    border: 2px solid black;
+    border-radius: 20px;
+    
+}
+h2{
+    margin-left: 30px;
+}
+.search-container{
+    margin-right: 40px;
+}

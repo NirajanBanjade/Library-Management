@@ -2,43 +2,36 @@ import mongoose from "mongoose";
 import { Schema } from "mongoose";
 
 const Bookschema = new Schema({
-    author:{
-        type:String,
-        required:true,
-    },
-    country:{
-        type:String,
-        required:true,
-    },
-    imageLink:{
-        type:String,
-        required:false,
-    },
-    language:{
-        type:String,
-        required:true,
-    },
-    link:{
-        type:String,
-        required:false,
-    },
-    pages:{
-        type:Number,
-        required:true,
-    },
-    title:{
-        type:String,
-        required:true,
-    },
-    year:{
-        type:Number,
-        required:true,
-    },
-    number: {
-        type: Number,
+    title: {
+        type: String,
         required: true,
-        default: 1, // Start with 1 copy
-      },
+    },
+    author: {
+        type: String,
+        required: true,
+    },
+    imageLink: {
+        type: String,
+        required: false,  // Optional, as not every book may have an image
+    },
+    isbn: {
+        type: String,
+        required: true, // ISBN is required
+    },
+    status: {
+        type: String,
+        enum: ['available', 'checked out'], // Can either be "available" or "checked out"
+        required: true,
+        default: 'available', // Default status is "available"
+    },
+    checkedOutBy: {
+        type: String,
+        required: false, // Not required unless the book is checked out
+    },
+    dueDate: {
+        type: Date,
+        required: false, // Not required unless the book is checked out
+    },
 });
 
 const UserSchema = new Schema({
