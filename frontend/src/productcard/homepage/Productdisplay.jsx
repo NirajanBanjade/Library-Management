@@ -3,6 +3,8 @@ import BookCard from '../product/productcard';
 import { useState, useEffect } from 'react';
 import LoginPage from '../loginpage/login';
 import './Productdisplay.css'
+import Navbar from "./Navbar.jsx";
+
 
 const Productdisplay = () => {
     const [List, setList] = useState([]);
@@ -28,18 +30,23 @@ const Productdisplay = () => {
     //   console.log("Current List state:", List);
   
   return (
+    <>
     
+        <Navbar/> 
         <div className='container'>
         {List.map((book) => (
             <BookCard
             key={book._id}
             title={book.title}
             author={book.author}
-            year={book.year}
+            isbn={book.isbn}
+            status={book.status}
             imageLink={book.imageLink}
             />
         ))}
         </div>
+
+        </>
     
   );
 };

@@ -1,7 +1,7 @@
 
 .container {
   display: grid; /* Use grid layout */
-  grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+  grid-template-columns: repeat(4, 1fr); /* 3 equal-width columns */
   gap: 30px; /* Space between items */
   padding: 20px; /* Optional: adds padding inside the container */
   overflow-y: auto; /* Allow scrolling if content exceeds the container height */

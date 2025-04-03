@@ -4,6 +4,7 @@ import './login.css'
 const LoginPage = () => {
     return (
         <>
+        <div className="main-login">
 <div className="login-wrapper">
         <form className="login">
           <h1>Log in</h1>
@@ -46,6 +47,7 @@ const LoginPage = () => {
             <a href="/create-account">Register</a> </p>
           </div>
         </form>
+      </div>
       </div>
         </>
     );
