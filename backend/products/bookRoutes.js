@@ -32,9 +32,45 @@ async function getOne(req,res){
     }
 }
 
+async function updateBook(req,res){
+  try{
+    const itemBook=await Book.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {new:true,runValidators:true},
+    );
+    if(!itemBook){
+      return res.status(404).json({message: "Product not found!"});
+    }
+    res.status(200).json({message: "Product updated!"});
+  }
+  catch{
+    res.status(500).json({ message: 'Failed to update the book details!', error })
+  }
+}
+
+async function deleteBook(req,res){
+  try{
+    const itemBook= await Book.findByIdAndDelete(
+      req.params.id
+    )
+    if(!itemBook){
+      return res.status(404).json({message: "Product not found!"});
+    }
+    res.status(200).json({success:true,message: "Product deleted!"});
+  }
+  catch{
+    res.status(500).json({ message: 'Failed to delete the book details!', error })
+  }
+}
+
+
 
 router.get('/', getBooks);
 router.get('/:id', getOne);
+router.put('/:id',updateBook);
+router.delete('/:id',deleteBook);
+
 // router.post('/', createBook);
 
 // // DELETE /api/books/:id

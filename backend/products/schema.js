@@ -32,6 +32,10 @@ const Bookschema = new Schema({
         type: Date,
         required: false, // Not required unless the book is checked out
     },
+    publisher:{
+        type:String,
+        required: false,
+    }
 });
 
 const UserSchema = new Schema({

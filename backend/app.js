@@ -12,4 +12,4 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 import bookRoutes from './products/bookRoutes.js';
-app.use('/api/books', bookRoutes);
+app.use('/api/books', bookRoutes);  

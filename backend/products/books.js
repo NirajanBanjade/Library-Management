@@ -3,19 +3,21 @@ const Books = [
     title: "Things Fall Apart",
     author: "Chinua Achebe",
     imageLink: "images/things-fall-apart.jpeg",
-    isbn: "978-0-385-05770-8", // Example ISBN
-    status: "available", // Example status
-    checkedOutBy: null, // No one has checked it out
-    dueDate: null, // Not checked out, so no due date
+    isbn: "978-0-385-05770-8",
+    status: "available",
+    checkedOutBy: null,
+    dueDate: null,
+    publisher: "Heinemann"
   },
   {
     title: "Fairy Tales",
     author: "Hans Christian Andersen",
     imageLink: "images/fairytails.jpg",
     isbn: "978-1-891786-33-3",
-    status: "checked out", // Example status
-    checkedOutBy: "John Doe", // Example checked out by
-    dueDate: "2025-04-15", // Example due date
+    status: "checked out",
+    checkedOutBy: "John Doe",
+    dueDate: "2025-04-15",
+    publisher: "Penguin Classics"
   },
   {
     title: "The Divine Comedy",
@@ -25,6 +27,7 @@ const Books = [
     status: "available",
     checkedOutBy: null,
     dueDate: null,
+    publisher: "Oxford University Press"
   },
   {
     title: "Pride and Prejudice",
@@ -34,6 +37,7 @@ const Books = [
     status: "checked out",
     checkedOutBy: "Alice Smith",
     dueDate: "2025-03-30",
+    publisher: "Wordsworth Editions"
   },
   {
     title: "Le Père Goriot",
@@ -43,6 +47,7 @@ const Books = [
     status: "available",
     checkedOutBy: null,
     dueDate: null,
+    publisher: "Penguin Books"
   },
   {
     title: "Molloy",
@@ -52,6 +57,7 @@ const Books = [
     status: "available",
     checkedOutBy: null,
     dueDate: null,
+    publisher: "Grove Press"
   },
   {
     title: "Ficciones",
@@ -61,6 +67,7 @@ const Books = [
     status: "checked out",
     checkedOutBy: "Emily Watson",
     dueDate: "2025-05-01",
+    publisher: "New Directions"
   },
   {
     title: "Wuthering Heights",
@@ -70,6 +77,7 @@ const Books = [
     status: "available",
     checkedOutBy: null,
     dueDate: null,
+    publisher: "Oxford University Press"
   },
   {
     title: "The Stranger",
@@ -79,6 +87,7 @@ const Books = [
     status: "available",
     checkedOutBy: null,
     dueDate: null,
+    publisher: "Vintage International"
   },
   {
     title: "Journey to the End of the Night",
@@ -88,7 +97,8 @@ const Books = [
     status: "checked out",
     checkedOutBy: "George Green",
     dueDate: "2025-06-10",
-  },
+    publisher: "Dalkey Archive Press"
+  }
 ];
 
 export default Books;
