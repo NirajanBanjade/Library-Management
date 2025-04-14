@@ -6,6 +6,7 @@ function BookCard(props) {
   console.log("Props received in BookCard:", props);
 
   return (
+    <div className='card-size-first'>
      <div className='card-container'>
       <img src={imageLink} alt="no image" />
       <div className='text-edit'>
@@ -19,6 +20,7 @@ function BookCard(props) {
         </strong><br/>
         <strong><button type="button" id="full-desc">Full description</button></strong>
       </div>
+     </div>
      </div>
 
   );

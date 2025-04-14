@@ -9,7 +9,6 @@ const Navbar = () => {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    // Handle the search logic here (e.g., filtering books or redirecting to a search results page)
     console.log('Searching for:', searchQuery);
   };
 
