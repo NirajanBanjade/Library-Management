@@ -6,7 +6,7 @@ import './Productdisplay.css'
 import Navbar from "./Navbar.jsx";
 
 
-const Productdisplay = () => {
+const Productdisplay = ({filter}) => {
     const [List, setList] = useState([]);
     async function fetchdata(){
         console.log("Fetching data...");
@@ -28,23 +28,27 @@ const Productdisplay = () => {
         fetchdata();
       }, []);
     //   console.log("Current List state:", List);
-  
+
+    const filteredList = filter
+    ? List.filter((book) => book.status.toLowerCase() === filter.toLowerCase())
+    : List;
+
   return (
     <>
     
-        <Navbar/> 
-        <div className='container'>
-        {List.map((book) => (
-            <BookCard
+      <Navbar />
+      <div className="container">
+        {filteredList.map((book) => (
+          <BookCard
             key={book._id}
             title={book.title}
             author={book.author}
             isbn={book.isbn}
             status={book.status}
             imageLink={book.imageLink}
-            />
+          />
         ))}
-        </div>
+      </div>
 
         </>
     
