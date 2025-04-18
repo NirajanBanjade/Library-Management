@@ -1,0 +1,18 @@
+#edit , #delete, #back{
+    height: 40px;
+    width: 60px;
+    margin: 10px;
+}
+#edit{
+    background-color: green;
+}
+#delete{
+    background-color: red;
+}
+
+.full-desc-container{
+    border: 2px solid black;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}

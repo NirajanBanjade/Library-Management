@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import './App.css'
 import LoginPage from './productcard/loginpage/login'
-import BookCard from './productcard/product/productcard'
 import Productdisplay from './productcard/homepage/Productdisplay'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Fulldesc from './productcard/Fulldesc';
+import FulldescWrapper from './productcard/fulldescwrapper';
 
 
 function App() {
@@ -14,8 +15,10 @@ function App() {
     <Router>
       <Routes>
       <Route path="/" element={<LoginPage />} />
+      <Route path="/Fulldesc/:bookId" element={<FulldescWrapper />} />
       <Route path="/products" element={<Productdisplay />} />
-      
+      <Route path="/available" element={<Productdisplay filter="available" />} />
+      <Route path="/checkedout" element={<Productdisplay filter="checked out" />} />
       </Routes>
     </Router>
     </>
