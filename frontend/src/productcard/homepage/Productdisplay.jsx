@@ -1,7 +1,6 @@
 import React from 'react';
 import BookCard from '../product/productcard';
 import { useState, useEffect } from 'react';
-import LoginPage from '../loginpage/login';
 import './Productdisplay.css'
 import Navbar from "./Navbar.jsx";
 
@@ -41,6 +40,7 @@ const Productdisplay = ({filter}) => {
         {filteredList.map((book) => (
           <BookCard
             key={book._id}
+            id={book._id}
             title={book.title}
             author={book.author}
             isbn={book.isbn}
