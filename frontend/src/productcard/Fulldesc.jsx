@@ -73,6 +73,49 @@ const Fulldesc = ({ bookId }) => {
 
   if (!book) return <div>Loading...</div>;
 
+  const handleCheckOut = async () => {
+    if (book.status === "checked out") {
+      alert("This book is already checked out.");
+      return;
+    }
+  
+    try {
+      const response = await fetch(`http://localhost:4000/api/books/${bookId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...book, status: "checked out" }),
+      });
+      if (!response.ok) throw new Error("CheckOut failed.");
+      const updated = await response.json();
+      setBook(updated);
+      navigate('/products');
+      alert("Book checked out successfully.");
+
+    } catch (error) {
+      console.error("CheckOut error:", error);
+      alert("Failed to check out book.");
+    }
+  };
+  const handleCheckIn = async () => {
+  
+    try {
+      const response = await fetch(`http://localhost:4000/api/books/${bookId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...book, status: "available" }),
+      });
+      if (!response.ok) throw new Error("CheckIn failed.");
+      const updated = await response.json();
+      setBook(updated);
+      navigate('/products');
+      alert("Book checked in successfully.");
+    } catch (error) {
+      console.error("CheckIn error:", error);
+      alert("Failed to check in book.");
+    }
+  };
+  
+
   return (
     <div className="full-desc-container" style={{ display: "flex", gap: "20px", padding: "20px" }}>
       <div className="img_desc">
@@ -90,6 +133,8 @@ const Fulldesc = ({ bookId }) => {
             <button id="edit" onClick={handleEdit}>Edit</button>
             <button id="delete" onClick={handleDelete}>Delete</button>
             <button id="back" onClick={() => navigate('/products')}>Back</button>
+            <button id="checkout" onClick={handleCheckOut}>CheckOut</button>
+            <button id="checkin" onClick={handleCheckIn}>CheckIn</button>
           </>
         ) : (
           <>
