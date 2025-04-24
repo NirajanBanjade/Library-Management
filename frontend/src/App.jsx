@@ -3,7 +3,6 @@ import './App.css'
 import LoginPage from './productcard/loginpage/login'
 import Productdisplay from './productcard/homepage/Productdisplay'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Fulldesc from './productcard/Fulldesc';
 import FulldescWrapper from './productcard/fulldescwrapper';
 
 

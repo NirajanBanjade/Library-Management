@@ -50,6 +50,7 @@ const LoginPage = () => {
                 required
                 className="input"
                 onChange={(e)=>setId(e.target.value)}
+                  placeholder="nirajan"
               />
             </div>
 
@@ -62,6 +63,7 @@ const LoginPage = () => {
                 required
                 className="input"
                 onChange={(e)=>setPass(e.target.value)}
+                placeholder="nirajan"
               />
             </div>
 

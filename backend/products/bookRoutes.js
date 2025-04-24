@@ -1,12 +1,7 @@
 import express from 'express';
 import { Book, User } from './schema.js';
 
-const router = express.Router(); // creates a mini router
-
-// GET /api/books
-
-
-// POST /api/books
+const router = express.Router(); 
 
 
 async function getBooks(req, res) {
