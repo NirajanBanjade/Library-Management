@@ -1,6 +1,6 @@
-#edit , #delete, #back{
+#edit , #delete, #back, #checkout, #checkin{
     height: 40px;
-    width: 60px;
+    width: 100px;
     margin: 10px;
 }
 #edit{
@@ -9,10 +9,20 @@
 #delete{
     background-color: red;
 }
+#checkout{
+    background-color: blue;
+}
+#checkin{
+    background-color: brown;
+}
 
 .full-desc-container{
     border: 2px solid black;
      display: flex;
      justify-content: center;
      align-items: center;
+     height: 500px;
+     width: 900px;
+     border-radius: 30px;
 }
+
