@@ -19,7 +19,7 @@ async function loginfunctionality(req, res) {
         res.status(500).send("Unable to login!");
     }
 }
-router.post('/', loginfunctionality);
+router.post('/login', loginfunctionality);
 
 
 export default router;

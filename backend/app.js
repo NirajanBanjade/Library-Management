@@ -1,18 +1,54 @@
+// import express from 'express';
+// import {config} from "dotenv";
+// import cors from "cors";
+// import cookieParser from 'cookie-parser';
+// export const app = express()
+
+// config({path: "./config.env"});
+
+// app.use(cors());
+// app.use(cookieParser());
+// app.use(express.json());
+// app.use(express.urlencoded({extended:true}));
+
+// import bookRoutes from './products/bookRoutes.js';
+// import userRoutes from './products/userRoutes.js'
+
+// app.use('/',userRoutes);
+// app.use('/api/books', bookRoutes);  
+
 import express from 'express';
-import {config} from "dotenv";
+import { config } from "dotenv";
 import cors from "cors";
 import cookieParser from 'cookie-parser';
-export const app = express()
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-config({path: "./config.env"});
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-app.use(cors());
+export const app = express();
+
+config({ path: "./config.env" });
+
+// Middleware
+app.use(cors({
+  origin: process.env.FRONT_END_URL, // frontend for dev
+  credentials: true
+}));
 app.use(cookieParser());
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 
+// API Routes
 import bookRoutes from './products/bookRoutes.js';
-import userRoutes from './products/userRoutes.js'
+import userRoutes from './products/userRoutes.js';
 
-app.use('/',userRoutes);
-app.use('/api/books', bookRoutes);  
+app.use('/api/books', bookRoutes);
+app.use('/api/users', userRoutes);  // changed from "/" to "/api/users" for clarity
+
+// Serve frontend (production)
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../frontend/dist/index.html'));
+});
