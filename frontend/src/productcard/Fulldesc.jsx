@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import './fulldesc.css';
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
 const Fulldesc = ({ bookId }) => {
   const [book, setBook] = useState(null);
@@ -11,7 +12,7 @@ const Fulldesc = ({ bookId }) => {
   // Fetch the book data
   async function fetchdata() {
     try {
-      const response = await fetch(`http://localhost:4000/api/books/${bookId}`);
+      const response = await fetch(`${API_BASE}/${bookId}`);
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const data = await response.json();
       setBook(data);
@@ -39,7 +40,7 @@ const Fulldesc = ({ bookId }) => {
   // Handle Save (PUT request)
   const handleSave = async () => {
     try {
-      const response = await fetch(`http://localhost:4000/api/books/${bookId}`, {
+      const response = await fetch(`${API_BASE}/${bookId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(editedBook),
@@ -59,7 +60,7 @@ const Fulldesc = ({ bookId }) => {
   // Delete the book
   const handleDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:4000/api/books/${bookId}`, {
+      const response = await fetch(`${API_BASE}/${bookId}`, {
         method: "DELETE",
       });
       if (!response.ok) throw new Error("Delete failed.");
@@ -80,7 +81,7 @@ const Fulldesc = ({ bookId }) => {
     }
   
     try {
-      const response = await fetch(`http://localhost:4000/api/books/${bookId}`, {
+      const response = await fetch(`${API_BASE}/${bookId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...book, status: "checked out" }),
@@ -99,7 +100,7 @@ const Fulldesc = ({ bookId }) => {
   const handleCheckIn = async () => {
   
     try {
-      const response = await fetch(`http://localhost:4000/api/books/${bookId}`, {
+      const response = await fetch(`${API_BASE}/${bookId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...book, status: "available" }),

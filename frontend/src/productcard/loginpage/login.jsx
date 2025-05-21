@@ -2,6 +2,8 @@ import React from "react";
 import { useState,useEffect } from "react";
 import './login.css'
 import { useNavigate } from "react-router-dom";
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
+
 
 const LoginPage = () => {
   
@@ -13,11 +15,12 @@ const LoginPage = () => {
     e.preventDefault(); // prevent page reload
 
     try {
-      const res = await fetch("http://localhost:4000/", {
+      const res = await fetch(`${API_BASE}/users/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id: id, password: pass })
       });
+      
 
       if (res.ok) {
         // alert("Login successful ✅");
@@ -38,7 +41,7 @@ const LoginPage = () => {
     <>
       <div className="main-login">
         <div className="login-wrapper">
-          <form className="login" method="POST" action="/" onSubmit={handleSubmit}>
+          <form className="login"  onSubmit={handleSubmit}>
             <h1>Log in</h1>
 
             <div id="email">
