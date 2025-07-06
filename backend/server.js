@@ -22,5 +22,4 @@ mongoose.connect(process.env.MONGO_URI, {
 
 app.get('/',(req,res)=>{
     console.log("API is working!");
-    
 })
