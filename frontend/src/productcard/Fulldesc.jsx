@@ -12,14 +12,18 @@ const Fulldesc = ({ bookId }) => {
   // Fetch the book data
   async function fetchdata() {
     try {
-      const response = await fetch(`${API_BASE}/${bookId}`);
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      const data = await response.json();
+      const response = await fetch(`${API_BASE}/books/${bookId}`);
+      
+      const text = await response.text();           // 👈 Get raw response as text
+      console.log("Raw response:", text);           // 👈 Debug: What does server return?
+  
+      const data = JSON.parse(text);                // 👈 Then try parsing it
       setBook(data);
     } catch (error) {
       console.error("Error fetching book:", error);
     }
   }
+  
 
   useEffect(() => {
     if (bookId) fetchdata();

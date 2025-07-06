@@ -3,6 +3,8 @@ import BookCard from '../product/productcard';
 import { useState, useEffect } from 'react';
 import './Productdisplay.css'
 import Navbar from "./Navbar.jsx";
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
+
 
 
 const Productdisplay = ({filter}) => {
@@ -11,7 +13,8 @@ const Productdisplay = ({filter}) => {
         console.log("Fetching data...");
 
         try{
-            const response=await fetch('http://localhost:4000/api/books');
+          const response = await fetch(`${API_BASE}/books`);
+
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
               }
