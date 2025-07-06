@@ -2,12 +2,24 @@
     border:2px solid black;
     padding: 20px;
     border-radius: 30px;
+    height: 400px;
+    width: 300px;
+    
 }
 img{
     width: 200px;
     height: 200px;
 }
 #full-desc{
+    height: 43px;
+
     background-color: rgb(35, 150, 196);
     border-radius: 20px;
 }
+.card-size-first{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
